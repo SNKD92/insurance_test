@@ -1,22 +1,18 @@
 "use strict";
-
 import { den, vit, pricePerHour } from "./data.js";
+let sum = 0;
 
-const CalculatePrice = function (hour, price) {
-  return hour * price;
-};
+const CalculatePriceArrow = (hour) => hour * pricePerHour;
 
-const sumtime = function (test) {
-  let sum = 0;
+const sumtimeArrow = (test) => {
   for (let i = 0; i < test.uptime.length; i++) {
-    sum = sum + test.uptime[i];
+    sum += test.uptime[i];
   }
   return sum;
 };
 
-const outPut = function (test) {
-  const inputSum = sumtime(test);
-
+const arrowOutput = (test) => {
+  const inputSum = sumtimeArrow(test);
   return `${test.name} ${
     test.lastName
   } is used the service for ${inputSum} hours and the final cost is ${
