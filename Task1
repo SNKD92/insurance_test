@@ -1,10 +1,10 @@
 const arrayTest = [1, 2, 3];
-const res = [];
 const somefunc = (a) => (a += 1);
-const manualMap = function (array, fun) {
+const manualMap = (array, func) => {
+  const res = [];
   for (let i = 0; i < array.length; i++) {
-    res.push(fun(array[i]));
+    res.push(func(array[i]));
   }
+  return res;
 };
-manualMap(arrayTest, somefunc);
-console.log(res);
+console.log(manualMap(arrayTest, somefunc));
